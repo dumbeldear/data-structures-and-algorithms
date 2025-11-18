@@ -12,6 +12,7 @@ public class StaticArray<T>
     public StaticArray(int size)
     {
         _storage = new T[size];
+        _count = 0;
     }
 
     public T Get(int index)
@@ -22,11 +23,36 @@ public class StaticArray<T>
         }
         else if (index >= Length)
         {
-            throw new IndexOutOfRangeException("Index is out of range.");
+            throw new IndexOutOfRangeException("Index exceeds array capacity.");
         }
         else
         {
-            return _storage[index]; 
+            return _storage[index];
+        }        
+    }
+
+    public void Set(int index, T value)
+    {
+        if (index < 0)
+        {
+            throw new IndexOutOfRangeException("Index cannot be less than zero.");
+        }
+        else if (index >= Capacity)
+        {
+            throw new IndexOutOfRangeException("Index exceeds array capacity.");
+        }
+        else if (index > _count)
+        {
+            throw new IndexOutOfRangeException("Index is beyond the current length of the array.");
+        }
+        else
+        {
+            _storage[index] = value;
+        }
+
+        if (index == _count)
+        {
+            _count++;
         }
     }
 }
