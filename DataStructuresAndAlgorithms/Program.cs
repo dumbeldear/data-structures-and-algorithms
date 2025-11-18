@@ -18,3 +18,7 @@ Console.WriteLine("Array length is: " + array.Length);
 // Testing get methods
 Console.WriteLine(array.Get(3));
 
+// Testing Append
+array.Append("Holden");
+Console.WriteLine(array.Get(4));
+
