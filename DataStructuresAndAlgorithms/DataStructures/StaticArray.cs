@@ -55,4 +55,16 @@ public class StaticArray<T>
             _count++;
         }
     }
+
+    public void Append(T value)
+    {
+        if (Length == Capacity)
+        {
+            throw new InvalidOperationException("Array is full, cannot append.");
+        }
+        else 
+        {
+            Set(Length, value);
+        }
+    }
 }
