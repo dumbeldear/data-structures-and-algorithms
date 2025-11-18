@@ -2,6 +2,7 @@
 /// Represents a simple static array
 /// </summary>
 /// <typeparam name="T"></typeparam>
+namespace DataStructuresAndAlgorithms.DataStructures;
 public class StaticArray<T>
 {
     private int _count;
@@ -79,7 +80,7 @@ public class StaticArray<T>
         {
             if (index == Length - 1)
             {
-                _storage[index] = default;
+                _storage[index] = default!;
             }
             else
             {
@@ -91,11 +92,11 @@ public class StaticArray<T>
             // decrease counter
             _count--;
             // Clear last element
-            _storage[_count] = default;
+            _storage[_count] = default!;
         }
     }
 
-    public string ToString()
+    public override string ToString()
     {
         var tempArray = new T[Length];
         for (int i = 0; i < Length; i++)

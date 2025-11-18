@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+using DataStructuresAndAlgorithms.DataStructures;
 // Initializing static array
 var array = new StaticArray<string>(5);
 Console.WriteLine("Array capacity is: " + array.Capacity);
