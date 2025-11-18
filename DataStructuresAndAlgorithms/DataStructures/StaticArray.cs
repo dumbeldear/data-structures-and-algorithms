@@ -23,7 +23,7 @@ public class StaticArray<T>
         }
         else if (index >= Length)
         {
-            throw new IndexOutOfRangeException("Index exceeds array capacity.");
+            throw new IndexOutOfRangeException("Index exceeds the number of assigned elements.");
         }
         else
         {
@@ -60,11 +60,23 @@ public class StaticArray<T>
     {
         if (Length == Capacity)
         {
-            throw new InvalidOperationException("Array is full, cannot append.");
+            Resize(Capacity * 2);
         }
-        else 
+        Set(Length, value);
+    }
+    
+    private void Resize(int newCapacity)
+    {
+        // Create new storage
+        var newArray = new T[newCapacity];
+
+        // Copy old values into new array
+        for (int i = 0; i < Length; i++)
         {
-            Set(Length, value);
+            newArray[i] = _storage[i];
         }
+
+        // Assign storage to new array
+        _storage = newArray;
     }
 }
