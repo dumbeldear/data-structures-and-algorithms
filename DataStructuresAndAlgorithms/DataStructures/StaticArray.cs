@@ -13,4 +13,20 @@ public class StaticArray<T>
     {
         _storage = new T[size];
     }
+
+    public T Get(int index)
+    {
+        if (index < 0)
+        {
+            throw new IndexOutOfRangeException("Index cannot be less than zero.");
+        }
+        else if (index >= Length)
+        {
+            throw new IndexOutOfRangeException("Index is out of range.");
+        }
+        else
+        {
+            return _storage[index]; 
+        }
+    }
 }
