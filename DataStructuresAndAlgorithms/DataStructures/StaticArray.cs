@@ -64,6 +64,36 @@ public class StaticArray<T>
         }
         Set(Length, value);
     }
+
+    public void RemoveAt(int index)
+    {
+        if (index < 0)
+        {
+            throw new IndexOutOfRangeException("Index cannot be less than zero.");
+        }
+        else if (index >= Length)
+        {
+            throw new IndexOutOfRangeException("Index exceeds the number of assigned elements.");
+        }
+        else
+        {
+            if (index == Length - 1)
+            {
+                _storage[index] = default;
+            }
+            else
+            {
+                for (int i = index; i < Length - 1; i++)
+                {
+                    _storage[i] = _storage[i + 1];
+                }
+            }
+            // decrease counter
+            _count--;
+            // Clear last element
+            _storage[_count] = default;
+        }
+    }
     
     private void Resize(int newCapacity)
     {

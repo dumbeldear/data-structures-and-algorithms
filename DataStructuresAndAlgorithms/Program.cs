@@ -25,3 +25,10 @@ Console.WriteLine(array.Get(5));
 // Append should have triggered a Resize
 Console.WriteLine("Array capacity is: " + array.Capacity);
 
+// Try removing - Mercedes should disappear
+array.RemoveAt(2);
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine(array.Get(i));
+}
+
