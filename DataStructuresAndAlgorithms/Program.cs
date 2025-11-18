@@ -32,3 +32,5 @@ for (int i = 0; i < array.Length; i++)
     Console.WriteLine(array.Get(i));
 }
 
+Console.WriteLine(array.ToString());
+

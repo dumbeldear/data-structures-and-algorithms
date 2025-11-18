@@ -94,6 +94,16 @@ public class StaticArray<T>
             _storage[_count] = default;
         }
     }
+
+    public string ToString()
+    {
+        var tempArray = new T[Length];
+        for (int i = 0; i < Length; i++)
+        {
+            tempArray[i] = _storage[i];
+        }
+        return "[" + string.Join(", ", tempArray) + "]";        
+    }
     
     private void Resize(int newCapacity)
     {
