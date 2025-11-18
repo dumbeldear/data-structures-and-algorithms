@@ -8,7 +8,7 @@ array.Set(0, "Toyota");
 array.Set(1, "Honda");
 array.Set(2, "Mercedes");
 array.Set(3, "BMW");
-// array.Set(4, "Ford");
+array.Set(4, "Ford");
 // Testing Index out of range exception
 // array.Set(5, "Ford");
 
@@ -20,5 +20,8 @@ Console.WriteLine(array.Get(3));
 
 // Testing Append
 array.Append("Holden");
-Console.WriteLine(array.Get(4));
+Console.WriteLine(array.Get(5));
+
+// Append should have triggered a Resize
+Console.WriteLine("Array capacity is: " + array.Capacity);
 
