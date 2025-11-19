@@ -1,5 +1,6 @@
 ﻿
 using DataStructuresAndAlgorithms.DataStructures;
+/*
 // Initializing static array
 var array = new StaticArray<string>(5);
 Console.WriteLine("Array capacity is: " + array.Capacity);
@@ -34,4 +35,5 @@ for (int i = 0; i < array.Length; i++)
 }
 
 Console.WriteLine(array.ToString());
+*/
 
