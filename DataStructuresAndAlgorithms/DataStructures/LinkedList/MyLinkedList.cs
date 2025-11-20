@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using System.Text;
 
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedList;
@@ -57,8 +58,52 @@ public class LinkedList<T>
         if (head != null)
         {
             head = head.Next;
+            _count--;
         }
     }
+
+    public bool Remove(T value)
+    {
+
+        if (head == null)
+        {
+            return false;
+        }
+
+        if (EqualityComparer<T>.Default.Equals(head.Value, value))
+        {
+            head = head.Next;   
+            _count--;
+
+            if (head == null)
+                tail = null;
+
+            return true;
+        }
+
+        var current = head;
+
+        while (current.Next != null)
+        {
+            if (EqualityComparer<T>.Default.Equals(current.Next.Value, value))
+            {
+                if (current.Next == tail)
+                {
+                    tail = current;
+                }
+
+                current.Next = current.Next.Next;
+
+                _count--;
+                return true;
+            }
+
+            current = current.Next;
+        }
+
+        return false;
+    }
+
 
     public bool Contains(T value)
     {

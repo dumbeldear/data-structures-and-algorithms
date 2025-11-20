@@ -52,5 +52,8 @@ Console.WriteLine(linkedList.ToString());
 Console.WriteLine(linkedList.Contains("4"));
 Console.WriteLine(linkedList.Contains("8"));
 
-linkedList.RemoveFirst();
+//linkedList.RemoveFirst();
+//Console.WriteLine(linkedList.ToString());
+
+linkedList.Remove("6");
 Console.WriteLine(linkedList.ToString());
