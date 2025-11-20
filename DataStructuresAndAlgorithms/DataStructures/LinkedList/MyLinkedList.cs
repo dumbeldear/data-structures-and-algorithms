@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedList;
 
 public class LinkedList<T>
@@ -26,6 +28,27 @@ public class LinkedList<T>
             head = newNode;
         }
         _count++;
+    }
+
+    public override string ToString()
+    {
+        if (head == null)
+        {
+            return "Linked List is empty.";
+        }
+
+        var sb = new StringBuilder();
+        var current = head;
+
+        while (current != null)
+        {
+            sb.Append(current.Value);
+            sb.Append(" -> ");
+            current = current.Next;
+        }
+
+        sb.Append("null");
+        return sb.ToString();
     }
 }
 
