@@ -57,3 +57,6 @@ Console.WriteLine(linkedList.Contains("8"));
 
 linkedList.Remove("6");
 Console.WriteLine(linkedList.ToString());
+
+linkedList.Clear();
+Console.WriteLine(linkedList.ToString());

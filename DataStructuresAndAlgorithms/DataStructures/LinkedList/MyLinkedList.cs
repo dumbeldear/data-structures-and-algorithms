@@ -72,7 +72,7 @@ public class LinkedList<T>
 
         if (EqualityComparer<T>.Default.Equals(head.Value, value))
         {
-            head = head.Next;   
+            head = head.Next;
             _count--;
 
             if (head == null)
@@ -103,7 +103,13 @@ public class LinkedList<T>
 
         return false;
     }
-
+    
+    public void Clear()
+    {
+        head = null;
+        tail = null;
+        _count = 0;
+    }
 
     public bool Contains(T value)
     {
