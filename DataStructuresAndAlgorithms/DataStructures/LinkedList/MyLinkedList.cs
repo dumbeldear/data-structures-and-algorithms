@@ -52,6 +52,20 @@ public class LinkedList<T>
         _count++;
     }
 
+    public bool Contains(T value)
+    {
+        var current = head;
+        while (current != null)
+        {
+            if (EqualityComparer<T>.Default.Equals(current.Value, value))
+            {
+                return true;
+            }
+            current = current.Next;
+        }
+        return false;
+    }
+
     public override string ToString()
     {
         if (head == null)

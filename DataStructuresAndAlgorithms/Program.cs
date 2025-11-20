@@ -46,5 +46,8 @@ linkedList.AddFirst("3");
 linkedList.AddFirst("4");
 linkedList.AddFirst("5");
 linkedList.AddLast("6");
+linkedList.AddLast(null);
 
 Console.WriteLine(linkedList.ToString());
+Console.WriteLine(linkedList.Contains("4"));
+Console.WriteLine(linkedList.Contains("8"));
