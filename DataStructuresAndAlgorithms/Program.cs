@@ -57,6 +57,7 @@ Console.WriteLine(linkedList.Contains("8"));
 
 linkedList.Remove("6");
 Console.WriteLine(linkedList.ToString());
+Console.WriteLine("Count is: " + linkedList.Count.ToString());
 
 linkedList.Clear();
 Console.WriteLine(linkedList.ToString());
