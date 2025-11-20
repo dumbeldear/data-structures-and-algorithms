@@ -9,6 +9,7 @@ public class LinkedList<T>
     private Node<T>? head;
     private Node<T>? tail;
     private int _count = 0;
+    public int Count => _count;
 
     public void AddFirst(T value)
     {
