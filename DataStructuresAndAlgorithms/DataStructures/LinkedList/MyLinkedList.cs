@@ -52,6 +52,14 @@ public class LinkedList<T>
         _count++;
     }
 
+    public void RemoveFirst()
+    {
+        if (head != null)
+        {
+            head = head.Next;
+        }
+    }
+
     public bool Contains(T value)
     {
         var current = head;
