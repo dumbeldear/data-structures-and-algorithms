@@ -3,7 +3,7 @@ using System.Text;
 
 namespace DataStructuresAndAlgorithms.DataStructures.LinkedList;
 
-public class LinkedList<T>
+public class LinkedList<T> : IEnumerable<T>
 {
     // head is the newest item and tail is the oldest item
     private Node<T>? head;
@@ -145,6 +145,22 @@ public class LinkedList<T>
 
         sb.Append("null");
         return sb.ToString();
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        var current = head;
+
+        while (current != null)
+        {
+            yield return current.Value;
+            current = current.Next;
+        }
+    }
+
+    System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
 

@@ -59,5 +59,10 @@ linkedList.Remove("6");
 Console.WriteLine(linkedList.ToString());
 Console.WriteLine("Count is: " + linkedList.Count.ToString());
 
+foreach (var item in linkedList)
+{
+    Console.WriteLine(item);
+}
+
 linkedList.Clear();
 Console.WriteLine(linkedList.ToString());
