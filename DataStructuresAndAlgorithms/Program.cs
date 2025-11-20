@@ -37,3 +37,11 @@ for (int i = 0; i < array.Length; i++)
 Console.WriteLine(array.ToString());
 */
 
+var linkedList = new LinkedList<string>();
+linkedList.AddFirst("1");
+linkedList.AddFirst("2");
+linkedList.AddFirst("3");
+linkedList.AddFirst("4");
+linkedList.AddFirst("5");
+
+Console.WriteLine(linkedList);
