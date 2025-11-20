@@ -30,6 +30,28 @@ public class LinkedList<T>
         _count++;
     }
 
+    public void AddLast(T value)
+    {
+        var newNode = new Node<T>(value);
+        // If list is empty
+        if (head == null)
+        {
+            // Sets tail and head to the newly added Node
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            // head is the newest
+            // tail is the oldest
+            // next is going from newest to oldest 
+            // so when adding last get the tail node and set next to the new one
+            tail.Next = newNode;
+            tail = newNode;
+        }
+        _count++;
+    }
+
     public override string ToString()
     {
         if (head == null)
