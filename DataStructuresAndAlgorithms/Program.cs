@@ -45,5 +45,6 @@ linkedList.AddFirst("2");
 linkedList.AddFirst("3");
 linkedList.AddFirst("4");
 linkedList.AddFirst("5");
+linkedList.AddLast("6");
 
 Console.WriteLine(linkedList.ToString());
