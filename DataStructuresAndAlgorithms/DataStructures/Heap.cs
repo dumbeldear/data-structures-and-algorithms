@@ -1,31 +1,39 @@
 namespace DataStructuresAndAlgorithms.DataStructures.Heap;
 
-interface GenericHeap<T>
+public interface IHeap<T>
 {
     int Count { get; }
-    bool isEmpty { get; }
+    bool IsEmpty { get; }
     void Insert(T value);
-    void Pop();
-    void Peek();
+    T Pop();
+    T Peek();
 }
 
-public class Heap<T> : GenericHeap<T>
+public class Heap<T> : IHeap<T>
 {
-    public int Count { get; }
-    public bool isEmpty { get; }
+    private List<T> _elements;
+    private readonly Comparison<T> _compare;
+    public int Count => _elements.Count;
+    public bool IsEmpty => Count == 0;
+
+    public Heap(Comparison<T> comparison = null)
+    {
+        _elements = new List<T>();
+        _compare = comparison ?? Comparer<T>.Default.Compare;
+    }
 
     public void Insert(T value)
     {
 
     }
 
-    public void Pop()
+    public T Pop()
     {
 
     }
     
-    public void Peek()
+    public T Peek()
     {
-        
+
     }
 }
