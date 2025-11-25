@@ -31,9 +31,29 @@ public class Heap<T> : IHeap<T>
     {
 
     }
-    
+
     public T Peek()
     {
 
+    }
+
+    public int Parent(int index)
+    {
+        return (index - 1) / 2;
+    }
+
+    public int LeftChild(int index)
+    {
+        return index * 2 + 1;
+    }
+
+    public int RightChild(int index)
+    {
+        return index * 2 + 2;
+    }
+    
+    bool HasHigherPriority(int a, int b)
+    {
+        return  _compare(_elements[a], _elements[b]) > 0;
     }
 }
