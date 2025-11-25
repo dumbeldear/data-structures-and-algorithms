@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 namespace DataStructuresAndAlgorithms.DataStructures.Heap;
 
 public interface IHeap<T>
@@ -24,7 +26,29 @@ public class Heap<T> : IHeap<T>
 
     public void Insert(T value)
     {
-
+        _elements.Add(value);
+        if (Count > 1)
+        {
+            int currentIndex = Count - 1;
+            bool correctPosition = false;
+            while (!correctPosition && currentIndex > 0)
+            {
+                // Check with parent node
+                if (HasHigherPriority(currentIndex, Parent(currentIndex)))
+                {
+                    T currentElement = _elements[currentIndex];
+                    T parentElement = _elements[Parent(currentIndex)];
+                    // Swap 
+                    _elements[currentIndex] = parentElement;
+                    _elements[Parent(currentIndex)] = currentElement;
+                    currentIndex = Parent(currentIndex);
+                }
+                else
+                {
+                    correctPosition = true;
+                }
+            }
+        }
     }
 
     public T Pop()
