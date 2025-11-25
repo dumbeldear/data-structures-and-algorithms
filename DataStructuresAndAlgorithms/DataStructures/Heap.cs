@@ -27,9 +27,14 @@ public class Heap<T> : IHeap<T>
     public void Insert(T value)
     {
         _elements.Add(value);
+        BubbleUp(_elements.Count - 1);
+    }
+
+    private void BubbleUp(int index)
+    {
         if (Count > 1)
         {
-            int currentIndex = Count - 1;
+            int currentIndex = index;
             bool correctPosition = false;
             while (!correctPosition && currentIndex > 0)
             {
